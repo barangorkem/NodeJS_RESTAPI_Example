@@ -6,10 +6,10 @@ const checkAuth=require('../middleware/check-auth');
 const ProductsController=require('../controllers/products');
 const Product=require('../models/product');
 
-router.get('/',checkAuth,ProductsController.products_get_all);
-router.post('/',checkAuth,ProductsController.products_create_product);
-router.get('/:productId',checkAuth,ProductsController.products_get_product)
-router.patch('/:productId',checkAuth,ProductsController.products_update_product);
-router.delete('/:productId',checkAuth,ProductsController.products_delete_product);
+router.get('/',ProductsController.products_get_all);
+router.post('/',ProductsController.products_create_product);
+router.get('/:productId',ProductsController.products_get_product)
+router.patch('/:productId',ProductsController.products_update_product);
+router.delete('/:productId',ProductsController.products_delete_product);
 
 module.exports=router;

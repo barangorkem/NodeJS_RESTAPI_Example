@@ -8,18 +8,18 @@ exports.products_get_all=(req,res,next)=>{
     .select("_id name price")
     .exec()
     .then(docs=>{
-        console.log(docs);
+        console.log("sorgu");
         if(docs.length>0)
         {
-            console.log(req.token);
-            console.log(req.userData);
-            res.status(200).json(docs); 
+            //console.log(req.token);
+            //console.log(req.userData);
+          return  res.status(200).json(docs); 
 
 
         }
         else
         {
-            res.status(404).json({
+          return  res.status(404).json({
                 message:"No entries found"
             });
         }

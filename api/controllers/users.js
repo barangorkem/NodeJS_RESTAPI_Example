@@ -106,6 +106,7 @@ exports.users_signup_user=(req,res,next)=>{
 }
 
 exports.users_get_user=(req,res,next)=>{
+    console.log(req.userData);
     Users.findById(req.params.userId)
     .exec()
     .then(result=>{
